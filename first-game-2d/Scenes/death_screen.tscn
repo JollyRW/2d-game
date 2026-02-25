@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bs538dtj7c5bq"]
+
+[ext_resource type="Script" uid="uid://cqo8ldkyvwwyo" path="res://Scripts/death_screen.gd" id="1_8hps1"]
+[ext_resource type="FontFile" uid="uid://boiyyc0g3tvaf" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_rwas2"]
+
+[node name="death_screen" type="CanvasLayer" unique_id=710924937]
+process_mode = 3
+script = ExtResource("1_8hps1")
+
+[node name="Control" type="Control" parent="." unique_id=649263658]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="death_overlay" type="ColorRect" parent="Control" unique_id=1379983367]
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 654.0
+color = Color(1, 0, 0, 0.25490198)
+
+[node name="retry_button" type="Button" parent="Control" unique_id=684181865]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 325.0
+offset_right = 708.0
+offset_bottom = 374.0
+theme_override_colors/font_color = Color(0.9973057, 0.8016353, 0, 1)
+theme_override_fonts/font = ExtResource("2_rwas2")
+theme_override_font_sizes/font_size = 24
+action_mode = 0
+text = "Retry?"
+
+[node name="you_died" type="Label" parent="Control" unique_id=937644284]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 216.0
+offset_right = 832.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("2_rwas2")
+theme_override_font_sizes/font_size = 56
+text = "You Died :("
+
+[connection signal="pressed" from="Control/retry_button" to="." method="_on_retry_button_pressed"]

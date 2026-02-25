@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bcmwulsu1jxog"]
+
+[ext_resource type="Script" uid="uid://cl33sdusv7nam" path="res://Scripts/killzone_slime.gd" id="1_br33v"]
+
+[node name="killzone" type="Area2D" unique_id=2028297776]
+process_mode = 3
+collision_mask = 2
+script = ExtResource("1_br33v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
